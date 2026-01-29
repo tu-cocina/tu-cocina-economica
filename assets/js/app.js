@@ -83,3 +83,18 @@ document.addEventListener("keydown", (e) => {
    Año en footer
    ========================= */
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// ===== ANUNCIO INICIAL =====
+const adModal = document.getElementById('adModal');
+const adClose = document.getElementById('adClose');
+
+// Mostrar anuncio al cargar la página
+window.addEventListener('load', () => {
+  adModal.setAttribute('aria-hidden', 'false');
+});
+
+
+// Cerrar anuncio
+adClose.addEventListener('click', () => {
+  adModal.setAttribute('aria-hidden', 'true');
+});
