@@ -1,0 +1,309 @@
+/* =========================
+   Variables (Light/Dark)
+   ========================= */
+:root{
+  --bg: #ffffff;
+  --surface: #f5f6fa;
+  --text: #101114;
+  --muted: #5a6072;
+  --border: rgba(16,17,20,.12);
+  --shadow: 0 10px 30px rgba(16,17,20,.10);
+
+  --accent: #1f6feb;
+  --wa: #25D366;
+
+  --radius: 16px;
+  --container: 980px;
+}
+
+[data-theme="dark"]{
+  --bg: #0b0b0f;
+  --surface: #151624;
+  --text: #f1f2f6;
+  --muted: #b4b8c7;
+  --border: rgba(241,242,246,.12);
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+
+  --accent: #7aa7ff;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =========================
+   Layout
+   ========================= */
+.container{
+  width: min(var(--container), calc(100% - 28px));
+  margin: 0 auto;
+}
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 12px;
+}
+
+.brand{
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.brand__name{
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: 1.05rem;
+}
+.brand__tag{
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.hero{
+  padding: 18px 0 6px;
+}
+.hero h1{
+  margin: 0 0 6px;
+  font-size: 1.55rem;
+}
+.muted{
+  color: var(--muted);
+}
+
+/* =========================
+   Buttons
+   ========================= */
+.btn{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: none;
+  cursor: pointer;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-ghost{
+  background: transparent;
+}
+
+.btn-icon{
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  justify-content: center;
+}
+
+/* =========================
+   Menu sections
+   ========================= */
+.menu-section{
+  padding: 14px 0;
+}
+
+.section-title{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.section-title h2{
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.menu-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* Card (tap-friendly) */
+.menu-item{
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.menu-item__info{
+  min-width: 0;
+}
+
+.menu-item__top{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.menu-item__name{
+  font-weight: 900;
+  font-size: 1.02rem;
+  line-height: 1.1;
+}
+
+.menu-item__price{
+  font-weight: 900;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.menu-item__desc{
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.25;
+}
+
+.menu-item__hint{
+  flex: 0 0 auto;
+  font-weight: 800;
+  font-size: .9rem;
+  opacity: .75;
+}
+
+/* =========================
+   Modal (image viewer)
+   ========================= */
+.modal{
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none; /* toggled via JS */
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,.55);
+}
+
+.modal[aria-hidden="false"]{
+  display: flex;
+}
+
+.modal__panel{
+  width: min(560px, 100%);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.modal__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal__title{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.modal__name{
+  font-weight: 900;
+}
+.modal__price{
+  font-weight: 900;
+  color: var(--accent);
+  font-size: .95rem;
+}
+
+.modal__img{
+  width: 100%;
+  height: min(62vh, 420px);
+  display: block;
+
+  /* clave: que NO se recorte */
+  object-fit: contain;
+  background: var(--surface);
+}
+
+.modal__desc{
+  margin: 0;
+  padding: 10px 12px 14px;
+  font-size: .95rem;
+}
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer{
+  padding: 22px 0 80px; /* espacio para el botón WA */
+  text-align: center;
+}
+
+/* =========================
+   WhatsApp floating button
+   ========================= */
+.wa-float{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--wa);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  border: none;
+  text-decoration: none;
+}
+.wa-float svg{
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+/* =========================
+   Mobile-first + better spacing on larger screens
+   ========================= */
+@media (min-width: 720px){
+  .menu-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .hero h1{
+    font-size: 1.9rem;
+  }
+}

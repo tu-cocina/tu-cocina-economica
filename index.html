@@ -1,410 +1,202 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TU COCINA ECONOMICA | Menú</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>Tu cocina económica — Menú</title>
+  <meta name="description" content="Menú de Tu cocina económica. Platillos, ensaladas y bebidas." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
-    <main class="page">
-        <section class="menu-card" aria-label="Menú del restaurante">
-            <header class="topbar">
-                <div class="topbar__left">
-                    <p class="eyebrow">HORARIO</p>
-                    <p class="small">Lun–Dom · 8:00 AM – 6:00 PM</p>
-                </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand__name">Tu cocina económica</span>
+        <span class="brand__tag">Menú</span>
+      </div>
 
-                <div class="topbar__right">
-                    <span class="pill">Desde <strong>$99</strong></span>
+      <button id="themeToggle" class="btn btn-ghost" type="button" aria-label="Cambiar tema">
+        <span class="btn__icon" aria-hidden="true">🌓</span>
+        <span class="btn__text">Tema</span>
+      </button>
+    </div>
+  </header>
 
-                    <button class="theme-btn" id="themeBtn" type="button" aria-label="Cambiar tema">
-                        🌙/☀️
-                    </button>
-                </div>
+  <main class="container">
+    <section class="hero">
+      <h1>Menú</h1>
+      <p class="muted">Toca un platillo para ver su foto. Precios y platillos son editables en un solo lugar.</p>
+    </section>
 
-                <div class="topbar__center">
-                    <p class="brand">TU COCINA ECONOMICA</p>
-                    <h1 class="title">MENÚ</h1>
-                    <p class="small muted">Desliza para ver Lun–Vie</p>
-                </div>
+    <!-- MAIN DISHES -->
+    <section class="menu-section" aria-labelledby="sec-principales">
+      <div class="section-title">
+        <h2 id="sec-principales">Platillos principales</h2>
+      </div>
 
-                <div class="topbar__right">
-                    <span class="pill">Desde <strong>$99</strong></span>
-                </div>
-            </header>
+      <div class="menu-grid" id="grid-principales">
+        <!-- ITEM -->
+        <button class="menu-item" type="button"
+          data-name="Tacos dorados"
+          data-desc="Orden de 4 con crema, queso y salsa"
+          data-price="65"
+          data-img="assets/img/tacos.jpg">
+          <div class="menu-item__info">
+            <div class="menu-item__top">
+              <span class="menu-item__name">Tacos dorados</span>
+              <span class="menu-item__price">$65</span>
+            </div>
+            <span class="menu-item__desc">Orden de 4 con crema, queso y salsa</span>
+          </div>
+          <span class="menu-item__hint" aria-hidden="true">Ver foto</span>
+        </button>
 
-            <!-- Selector de día (chips) -->
-            <nav class="day-nav" aria-label="Menú por día">
-                <button class="day-chip" data-day="0" type="button">Lunes</button>
-                <button class="day-chip" data-day="1" type="button">Martes</button>
-                <button class="day-chip" data-day="2" type="button">Miércoles</button>
-                <button class="day-chip" data-day="3" type="button">Jueves</button>
-                <button class="day-chip" data-day="4" type="button">Viernes</button>
-            </nav>
+        <button class="menu-item" type="button"
+          data-name="Milanesa con arroz"
+          data-desc="Incluye ensalada y tortillas"
+          data-price="95"
+          data-img="assets/img/placeholder.jpg">
+          <div class="menu-item__info">
+            <div class="menu-item__top">
+              <span class="menu-item__name">Milanesa con arroz</span>
+              <span class="menu-item__price">$95</span>
+            </div>
+            <span class="menu-item__desc">Incluye ensalada y tortillas</span>
+          </div>
+          <span class="menu-item__hint" aria-hidden="true">Ver foto</span>
+        </button>
 
-            <!-- Carrusel swipeable (Lun–Vie) -->
-            <section class="carousel" aria-roledescription="carrusel">
-                <div class="carousel__viewport" id="menuViewport" tabindex="0" aria-label="Desliza para cambiar de día">
-                    <div class="carousel__track" id="menuTrack">
+        <button class="menu-item" type="button"
+          data-name="Enchiladas rojas"
+          data-desc="3 piezas con pollo y crema"
+          data-price="85"
+          data-img="assets/img/placeholder.jpg">
+          <div class="menu-item__info">
+            <div class="menu-item__top">
+              <span class="menu-item__name">Enchiladas rojas</span>
+              <span class="menu-item__price">$85</span>
+            </div>
+            <span class="menu-item__desc">3 piezas con pollo y crema</span>
+          </div>
+          <span class="menu-item__hint" aria-hidden="true">Ver foto</span>
+        </button>
+      </div>
+    </section>
 
-                        <!-- ===================== LUNES ===================== -->
-                        <article class="slide" data-day="0" aria-label="Menú del Lunes">
-                            <div class="slide__badge">Lunes</div>
+    <!-- SALADS -->
+    <section class="menu-section" aria-labelledby="sec-ensaladas">
+      <div class="section-title">
+        <h2 id="sec-ensaladas">Ensaladas</h2>
+      </div>
 
-                            <section class="grid">
-                                <!-- LEFT -->
-                                <aside class="panel panel--left">
-                                    <h2 class="panel__title">ENTRADAS</h2>
-                                    <ul class="items">
-                                        <li class="item">
-                                            <div class="item__name">Chilaquiles verdes</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$79</div>
-                                            <div class="item__desc">Con crema, queso y cebolla.</div>
-                                        </li>
-                                        <li class="item item--empty">
-                                            <div class="item__name">Agregar platillo</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$</div>
-                                            <div class="item__desc">Espacio editable.</div>
-                                        </li>
-                                    </ul>
+      <div class="menu-grid" id="grid-ensaladas">
+        <button class="menu-item" type="button"
+          data-name="Ensalada fresca"
+          data-desc="Lechuga, pepino, jitomate y aderezo"
+          data-price="55"
+          data-img="assets/img/ensalada.jpg">
+          <div class="menu-item__info">
+            <div class="menu-item__top">
+              <span class="menu-item__name">Ensalada fresca</span>
+              <span class="menu-item__price">$55</span>
+            </div>
+            <span class="menu-item__desc">Lechuga, pepino, jitomate y aderezo</span>
+          </div>
+          <span class="menu-item__hint" aria-hidden="true">Ver foto</span>
+        </button>
 
-                                    <div class="divider"></div>
+        <button class="menu-item" type="button"
+          data-name="Ensalada con pollo"
+          data-desc="Pollo a la plancha y aderezo"
+          data-price="75"
+          data-img="assets/img/placeholder.jpg">
+          <div class="menu-item__info">
+            <div class="menu-item__top">
+              <span class="menu-item__name">Ensalada con pollo</span>
+              <span class="menu-item__price">$75</span>
+            </div>
+            <span class="menu-item__desc">Pollo a la plancha y aderezo</span>
+          </div>
+          <span class="menu-item__hint" aria-hidden="true">Ver foto</span>
+        </button>
+      </div>
+    </section>
 
-                                    <h2 class="panel__title">CENAS</h2>
-                                    <ul class="items">
-                                        <li class="item">
-                                            <div class="item__name">Tacos dorados (5)</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$109</div>
-                                            <div class="item__desc">Con crema y queso.</div>
-                                        </li>
-                                        <li class="item item--empty">
-                                            <div class="item__name">Agregar platillo</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$</div>
-                                            <div class="item__desc">Espacio editable.</div>
-                                        </li>
-                                    </ul>
-                                </aside>
+    <!-- BEVERAGES -->
+    <section class="menu-section" aria-labelledby="sec-bebidas">
+      <div class="section-title">
+        <h2 id="sec-bebidas">Bebidas</h2>
+      </div>
 
-                                <!-- CENTER -->
-                                <section class="center">
-                                    <div class="hero-tiles">
-                                        <figure class="tile tile--img">
-                                            <img src="assets/img/hero-1.jpg" alt="Foto 1 (reemplaza)" />
-                                            <figcaption class="tile__cap">Foto principal 1</figcaption>
-                                        </figure>
-                                        <figure class="tile tile--img">
-                                            <img src="assets/img/hero-2.jpg" alt="Foto 2 (reemplaza)" />
-                                            <figcaption class="tile__cap">Foto principal 2</figcaption>
-                                        </figure>
-                                    </div>
+      <div class="menu-grid" id="grid-bebidas">
+        <button class="menu-item" type="button"
+          data-name="Agua fresca"
+          data-desc="Jamaica / Horchata / Limón"
+          data-price="25"
+          data-img="assets/img/agua.jpg">
+          <div class="menu-item__info">
+            <div class="menu-item__top">
+              <span class="menu-item__name">Agua fresca</span>
+              <span class="menu-item__price">$25</span>
+            </div>
+            <span class="menu-item__desc">Jamaica / Horchata / Limón</span>
+          </div>
+          <span class="menu-item__hint" aria-hidden="true">Ver foto</span>
+        </button>
 
-                                    <section class="specials">
-                                        <div class="specials__head">
-                                            <p class="eyebrow">ESPECIALES</p>
-                                            <h2 class="specials__title">ESPECIALES DE LA CASA</h2>
-                                            <p class="small muted">Edita por día.</p>
-                                        </div>
+        <button class="menu-item" type="button"
+          data-name="Refresco"
+          data-desc="Coca / Sprite / Fanta"
+          data-price="30"
+          data-img="assets/img/placeholder.jpg">
+          <div class="menu-item__info">
+            <div class="menu-item__top">
+              <span class="menu-item__name">Refresco</span>
+              <span class="menu-item__price">$30</span>
+            </div>
+            <span class="menu-item__desc">Coca / Sprite / Fanta</span>
+          </div>
+          <span class="menu-item__hint" aria-hidden="true">Ver foto</span>
+        </button>
+      </div>
+    </section>
 
-                                        <div class="specials__grid">
-                                            <article class="special">
-                                                <div class="special__text">
-                                                    <h3 class="special__name">Pollo en mole</h3>
-                                                    <p class="special__desc">Incluye arroz + frijoles + tortillas.</p>
-                                                    <p class="special__meta"><span class="tag">Más vendido</span></p>
-                                                </div>
-                                                <div class="special__price">$149</div>
-                                            </article>
-                                            <article class="special">
-                                                <div class="special__text">
-                                                    <h3 class="special__name">Carne en su jugo</h3>
-                                                    <p class="special__desc">Con tocino, frijol y cebollita.</p>
-                                                </div>
-                                                <div class="special__price">$159</div>
-                                            </article>
-                                        </div>
+    <footer class="site-footer">
+      <p class="muted">© <span id="year"></span> Tu cocina económica</p>
+    </footer>
+  </main>
 
-                                        <div class="specials__photos">
-                                            <figure class="photo">
-                                                <img src="assets/img/special-1.jpg" alt="Especial 1 (reemplaza)" />
-                                                <figcaption class="small muted">Foto especial 1</figcaption>
-                                            </figure>
-                                            <figure class="photo">
-                                                <img src="assets/img/special-2.jpg" alt="Especial 2 (reemplaza)" />
-                                                <figcaption class="small muted">Foto especial 2</figcaption>
-                                            </figure>
-                                        </div>
-                                    </section>
+  <!-- MODAL (visor de imagen) -->
+  <div id="imgModal" class="modal" aria-hidden="true" role="dialog" aria-label="Vista previa del platillo">
+    <div class="modal__panel" role="document">
+      <div class="modal__header">
+        <div class="modal__title">
+          <span id="modalName" class="modal__name"></span>
+          <span id="modalPrice" class="modal__price"></span>
+        </div>
+        <button id="modalClose" class="btn btn-ghost btn-icon" type="button" aria-label="Cerrar">✕</button>
+      </div>
 
-                                    <section class="tasty-sides">
-                                        <h2 class="panel__title">GUARNICIONES</h2>
-                                        <ul class="chips">
-                                            <li class="chip">Arroz</li>
-                                            <li class="chip">Frijoles</li>
-                                            <li class="chip">Ensalada</li>
-                                            <li class="chip chip--ghost">+ Agrega más</li>
-                                        </ul>
-                                    </section>
-                                </section>
+      <img id="modalImg" class="modal__img" alt="" />
 
-                                <!-- RIGHT -->
-                                <aside class="panel panel--right">
-                                    <h2 class="panel__title">COMIDAS</h2>
-                                    <ul class="items">
-                                        <li class="item">
-                                            <div class="item__name">Menú del día</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$99</div>
-                                            <div class="item__desc">Sopa + guisado + agua fresca.</div>
-                                        </li>
-                                        <li class="item item--empty">
-                                            <div class="item__name">Agregar platillo</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$</div>
-                                            <div class="item__desc">Espacio editable.</div>
-                                        </li>
-                                    </ul>
+      <p id="modalDesc" class="modal__desc muted"></p>
+    </div>
+  </div>
 
-                                    <div class="divider"></div>
+  <!-- WhatsApp flotante -->
+  <a class="wa-float"
+     href="https://wa.me/+525519800758?text=Hola%20quiero%20hacer%20un%20pedido"
+     target="_blank" rel="noopener"
+     aria-label="Enviar WhatsApp">
+    <!-- Icono WhatsApp (SVG) -->
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path d="M19.11 17.49c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.99 2.66 1.13 2.84c.14.18 1.95 2.98 4.73 4.17.66.29 1.17.46 1.57.59.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+      <path d="M26.67 5.33A13.28 13.28 0 0 0 16.01 1.33C8.66 1.33 2.67 7.31 2.67 14.66c0 2.34.61 4.62 1.78 6.64L2.56 30.67l9.58-1.86a13.3 13.3 0 0 0 6.39 1.63h.01c7.35 0 13.33-5.98 13.33-13.33 0-3.56-1.39-6.91-3.2-9.78zm-10.65 22.3h-.01c-2 0-3.96-.54-5.67-1.56l-.41-.24-5.68 1.1 1.07-5.54-.27-.43a10.6 10.6 0 0 1-1.63-5.66c0-5.85 4.76-10.6 10.62-10.6 2.84 0 5.51 1.1 7.52 3.11 2.01 2.01 3.11 4.68 3.11 7.52 0 5.85-4.76 10.6-10.66 10.6z"/>
+    </svg>
+  </a>
 
-                                    <h2 class="panel__title">POSTRES</h2>
-                                    <figure class="dessert">
-                                        <img src="assets/img/dessert.jpg" alt="Postre (reemplaza)" />
-                                        <figcaption class="dessert__cap">
-                                            <div class="dessert__name">Flan napolitano</div>
-                                            <div class="dessert__price">$49</div>
-                                        </figcaption>
-                                    </figure>
-
-                                    <ul class="items items--tight">
-                                        <li class="item">
-                                            <div class="item__name">Gelatina</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$25</div>
-                                        </li>
-                                        <li class="item item--empty">
-                                            <div class="item__name">Agregar postre</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$</div>
-                                        </li>
-                                    </ul>
-                                </aside>
-                            </section>
-                        </article>
-
-                        <!-- ===================== MARTES ===================== -->
-                        <article class="slide" data-day="1" aria-label="Menú del Martes">
-                            <div class="slide__badge">Martes</div>
-                            <!-- Copia/edita: puedes duplicar el bloque del Lunes y cambiar platillos -->
-                            <section class="grid">
-                                <aside class="panel panel--left">
-                                    <h2 class="panel__title">ENTRADAS</h2>
-                                    <ul class="items">
-                                        <li class="item">
-                                            <div class="item__name">Sopes (3)</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$85</div>
-                                            <div class="item__desc">Con frijol, lechuga, crema y queso.</div>
-                                        </li>
-                                        <li class="item item--empty">
-                                            <div class="item__name">Agregar platillo</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$</div>
-                                            <div class="item__desc">Espacio editable.</div>
-                                        </li>
-                                    </ul>
-                                    <div class="divider"></div>
-                                    <h2 class="panel__title">CENAS</h2>
-                                    <ul class="items">
-                                        <li class="item">
-                                            <div class="item__name">Milanesa</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$129</div>
-                                            <div class="item__desc">Incluye arroz.</div>
-                                        </li>
-                                        <li class="item item--empty">
-                                            <div class="item__name">Agregar platillo</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$</div>
-                                            <div class="item__desc">Espacio editable.</div>
-                                        </li>
-                                    </ul>
-                                </aside>
-
-                                <section class="center">
-                                    <div class="hero-tiles">
-                                        <figure class="tile tile--img"><img src="assets/img/hero-1.jpg"
-                                                alt="Foto (reemplaza)" />
-                                            <figcaption class="tile__cap">Foto principal</figcaption>
-                                        </figure>
-                                        <figure class="tile tile--img"><img src="assets/img/hero-2.jpg"
-                                                alt="Foto (reemplaza)" />
-                                            <figcaption class="tile__cap">Foto secundaria</figcaption>
-                                        </figure>
-                                    </div>
-
-                                    <section class="specials">
-                                        <div class="specials__head">
-                                            <p class="eyebrow">ESPECIALES</p>
-                                            <h2 class="specials__title">ESPECIALES DE LA CASA</h2>
-                                            <p class="small muted">Edita por día.</p>
-                                        </div>
-                                        <div class="specials__grid">
-                                            <article class="special">
-                                                <div class="special__text">
-                                                    <h3 class="special__name">Guisado del día</h3>
-                                                    <p class="special__desc">Descripción aquí.</p>
-                                                </div>
-                                                <div class="special__price">$</div>
-                                            </article>
-                                            <article class="special">
-                                                <div class="special__text">
-                                                    <h3 class="special__name">Guisado del día</h3>
-                                                    <p class="special__desc">Descripción aquí.</p>
-                                                </div>
-                                                <div class="special__price">$</div>
-                                            </article>
-                                        </div>
-                                        <div class="specials__photos">
-                                            <figure class="photo"><img src="assets/img/special-1.jpg"
-                                                    alt="Especial (reemplaza)" />
-                                                <figcaption class="small muted">Foto especial</figcaption>
-                                            </figure>
-                                            <figure class="photo"><img src="assets/img/special-2.jpg"
-                                                    alt="Especial (reemplaza)" />
-                                                <figcaption class="small muted">Foto especial</figcaption>
-                                            </figure>
-                                        </div>
-                                    </section>
-
-                                    <section class="tasty-sides">
-                                        <h2 class="panel__title">GUARNICIONES</h2>
-                                        <ul class="chips">
-                                            <li class="chip">Arroz</li>
-                                            <li class="chip">Frijoles</li>
-                                            <li class="chip chip--ghost">+ Agrega más</li>
-                                        </ul>
-                                    </section>
-                                </section>
-
-                                <aside class="panel panel--right">
-                                    <h2 class="panel__title">COMIDAS</h2>
-                                    <ul class="items">
-                                        <li class="item">
-                                            <div class="item__name">Menú del día</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$99</div>
-                                            <div class="item__desc">Sopa + guisado + agua.</div>
-                                        </li>
-                                        <li class="item item--empty">
-                                            <div class="item__name">Agregar platillo</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$</div>
-                                            <div class="item__desc">Espacio editable.</div>
-                                        </li>
-                                    </ul>
-
-                                    <div class="divider"></div>
-
-                                    <h2 class="panel__title">POSTRES</h2>
-                                    <figure class="dessert">
-                                        <img src="assets/img/dessert.jpg" alt="Postre (reemplaza)" />
-                                        <figcaption class="dessert__cap">
-                                            <div class="dessert__name">Postre</div>
-                                            <div class="dessert__price">$</div>
-                                        </figcaption>
-                                    </figure>
-                                    <ul class="items items--tight">
-                                        <li class="item">
-                                            <div class="item__name">Agregar postre</div>
-                                            <div class="item__dots"></div>
-                                            <div class="item__price">$</div>
-                                        </li>
-                                    </ul>
-                                </aside>
-                            </section>
-                        </article>
-
-                        <!-- ===================== MIÉRCOLES ===================== -->
-                        <article class="slide" data-day="2" aria-label="Menú del Miércoles">
-                            <div class="slide__badge">Miércoles</div>
-                            <section class="slide__simpleHint">
-                                <p class="small muted">Copia el contenido del Lunes/Martes y edítalo aquí (Miércoles).
-                                </p>
-                            </section>
-                            <section class="grid"></section>
-                        </article>
-
-                        <!-- ===================== JUEVES ===================== -->
-                        <article class="slide" data-day="3" aria-label="Menú del Jueves">
-                            <div class="slide__badge">Jueves</div>
-                            <section class="slide__simpleHint">
-                                <p class="small muted">Copia el contenido del Lunes/Martes y edítalo aquí (Jueves).</p>
-                            </section>
-                            <section class="grid"></section>
-                        </article>
-
-                        <!-- ===================== VIERNES ===================== -->
-                        <article class="slide" data-day="4" aria-label="Menú del Viernes">
-                            <div class="slide__badge">Viernes</div>
-                            <section class="slide__simpleHint">
-                                <p class="small muted">Copia el contenido del Lunes/Martes y edítalo aquí (Viernes).</p>
-                            </section>
-                            <section class="grid"></section>
-                        </article>
-
-                    </div>
-                </div>
-
-                <div class="carousel__controls" aria-label="Controles">
-                    <button class="ctrl" id="prevBtn" type="button" aria-label="Anterior">‹</button>
-                    <div class="carousel__status small muted" id="statusText">—</div>
-                    <button class="ctrl" id="nextBtn" type="button" aria-label="Siguiente">›</button>
-                </div>
-            </section>
-
-            <footer class="footer">
-                <div class="footer__left small muted">
-                    <strong>Dirección:</strong> Calle Principal #123 · Tu Ciudad
-                </div>
-                <div class="footer__right small muted">
-                    <strong>Contacto:</strong> WhatsApp 55 0000 0000 · IG @tucocinaeconomica
-                </div>
-            </footer>
-        </section>
-    </main>
-
-    <!-- WhatsApp Floating Button -->
-    <a class="wa-fab"
-        href="https://wa.me/+525519800758?text=Hola%20TU%20COCINA%20ECONOMICA%2C%20quiero%20hacer%20un%20pedido"
-        target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
-        <span class="wa-fab__icon" aria-hidden="true">
-            <!-- Logo WhatsApp (SVG inline) -->
-            <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
-                <path fill="currentColor"
-                    d="M19.11 17.56c-.28-.14-1.65-.81-1.9-.91-.25-.09-.43-.14-.61.14-.18.28-.7.91-.86 1.1-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.37-1.64-1.53-1.92-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.61-1.46-.83-2-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.46.07-.7.35-.25.28-.95.93-.95 2.26s.98 2.62 1.12 2.8c.14.18 1.93 2.95 4.68 4.13.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.88-1.31.23-.64.23-1.19.16-1.31-.07-.11-.25-.18-.53-.32Z" />
-                <path fill="currentColor" fill-rule="evenodd"
-                    d="M16 3C8.82 3 3 8.74 3 15.82c0 2.27.61 4.4 1.67 6.24L3 29l7.14-1.86a13.1 13.1 0 0 0 5.86 1.36c7.18 0 13-5.74 13-12.82C29 8.74 23.18 3 16 3Zm0 22.85c-1.9 0-3.67-.53-5.19-1.46l-.37-.22-4.23 1.1 1.13-4.06-.25-.4a10.77 10.77 0 0 1-1.66-5.7C5.43 9.93 10.16 5.3 16 5.3c5.84 0 10.57 4.62 10.57 10.52 0 5.89-4.73 10.53-10.57 10.53Z"
-                    clip-rule="evenodd" />
-            </svg>
-        </span>
-        <span class="wa-fab__text">WhatsApp</span>
-    </a>
-
-    <script src="js/main.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
-
 </html>
