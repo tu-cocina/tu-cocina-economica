@@ -316,15 +316,22 @@ body{
   gap: 10px;
   margin-top: 12px;
 }
+/* Contenedor de fotos */
 .photo{
-  margin:0;
+  width: 100%;
   border-radius: 14px;
-  overflow:hidden;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.03);
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
 }
-.photo img{ width:100%; height: 120px; object-fit: cover; display:block; }
-.photo figcaption{ padding: 8px 10px 10px; }
+
+/* Imagen completa (sin recorte) */
+.photo img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 
 /* Guarniciones */
 .tasty-sides{
