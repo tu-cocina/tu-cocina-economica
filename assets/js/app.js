@@ -1,29 +1,45 @@
 /* =========================
-   Tema (Light/Dark)
+   Storage seguro (no rompe en Android)
+   ========================= */
+function safeGet(key) {
+  try { return localStorage.getItem(key); } catch (e) { return null; }
+}
+function safeSet(key, value) {
+  try { localStorage.setItem(key, value); } catch (e) {}
+}
+
+/* =========================
+   Tema (Light / Dark)
    ========================= */
 const themeToggle = document.getElementById("themeToggle");
 const root = document.documentElement;
 
 function setTheme(theme) {
   root.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
+  safeSet("theme", theme);
 }
 
 (function initTheme() {
-  const saved = localStorage.getItem("theme");
+  const saved = safeGet("theme");
   if (saved === "light" || saved === "dark") {
     setTheme(saved);
     return;
   }
-  // Preferencia del sistema si no hay guardado
-  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
   setTheme(prefersDark ? "dark" : "light");
 })();
 
-themeToggle.addEventListener("click", () => {
-  const current = root.getAttribute("data-theme") || "light";
-  setTheme(current === "dark" ? "light" : "dark");
-});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme") || "light";
+    setTheme(current === "dark" ? "light" : "dark");
+  });
+}
+
 
 /* =========================
    Modal de imágenes
